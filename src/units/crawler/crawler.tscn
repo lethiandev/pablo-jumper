@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38, 21 )
 
-[node name="Crawler" type="KinematicBody2D"]
+[node name="Crawler" type="KinematicBody2D" groups=[
+"enemy",
+]]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 1 )
