@@ -6,9 +6,15 @@ signal curtain_opened()
 func _ready() -> void:
 	$ColorRect.visible = false
 
-func transit() -> void:
+func transit_fade_out() -> void:
+	transit("fade_out")
+
+func transit_fade_in() -> void:
+	transit("fade_in")
+
+func transit(anim_name: String) -> void:
 	get_tree().set_pause(true)
-	$ColorRect/AnimationPlayer.play("fade_out")
+	$ColorRect/AnimationPlayer.play(anim_name)
 	$ColorRect.visible = true
 
 func _on_animation_finished(anim_name: String) -> void:
