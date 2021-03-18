@@ -14,6 +14,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		linear_velocity.x = speed * direction
 		direction = _get_edge_direction()
+	
+	# Animate crawler
+	$RoombaSkin/AnimationTree["parameters/wheels/blend_position"] = direction
 
 func _get_edge_direction() -> float:
 	var offset = Vector2(0.0, 2.0)
