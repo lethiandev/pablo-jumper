@@ -1,0 +1,7 @@
+extends Object
+class_name Constants
+
+const COLLISION_MASK_OBSTACLES    = 0x0001
+const COLLISION_MASK_PLAYER       = 0x0002
+const COLLISION_MASK_ENEMIES      = 0x0004
+const COLLISION_MASK_COLLECTABLES = 0x0008
