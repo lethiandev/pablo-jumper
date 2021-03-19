@@ -1,23 +1,33 @@
 extends "res://units/base_unit/base_unit.gd"
 
+signal hitted()
+signal destroyed()
+
+export(int) var lives: int = 2
 export(float) var height: float = 20.0;
 
 func hit() -> void:
+	emit_signal("hitted")
+	internal_hit()
+	take_life()
+
+func take_life() -> void:
+	lives = lives - 1
+	if lives <= 0:
+		destroy()
+
+func destroy() -> void:
+	emit_signal("destroyed")
+	internal_destroy()
+	queue_free()
+
+func internal_hit() -> void:
+	# Overridable by derived classes
 	pass
 
-func kill(delay: float) -> void:
-	dispose(delay)
-	freeze()
-
-func freeze() -> void:
-	set_process(false)
-	set_physics_process(false)
-	set_collision_mask(0x0)
-	set_collision_layer(0x0)
-
-func dispose(delay: float) -> void:
-	var timer = get_tree().create_timer(delay)
-	timer.connect("timeout", self, "queue_free")
+func internal_destroy() -> void:
+	# Overridable by derived classes
+	pass
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.is_in_group("player"): hit()

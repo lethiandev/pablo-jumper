@@ -44,5 +44,5 @@ func jump() -> void:
 	var n = Vector2(direction, -4.0).normalized()
 	linear_velocity = n * 800.0
 
-func hit() -> void:
+func internal_hit() -> void:
 	$PabloSkin.blink()

@@ -26,5 +26,5 @@ func _physics_process_gravity(delta: float) -> void:
 	# Override gravity acceleration by none
 	pass
 
-func hit() -> void:
+func internal_hit() -> void:
 	$HeadcopterSkin.blink()
