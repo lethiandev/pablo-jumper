@@ -5,286 +5,29 @@
 [ext_resource path="res://units/copter/copter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stages/sandbox/sandbox.gd" type="Script" id=4]
 [ext_resource path="res://scripts/camera/camera.tscn" type="PackedScene" id=5]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[ext_resource path="res://tilesets/laboratory/laboratory.tres" type="TileSet" id=6]
 
 [node name="SandboxStage" type="Node"]
 script = ExtResource( 4 )
 
-[node name="Ground" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
-position = Vector2( 168, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D24" type="StaticBody2D" parent="Ground"]
-position = Vector2( 72, 304 )
-rotation = 1.23256
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D24"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D24"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Ground"]
-position = Vector2( 232, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D2"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D2"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Ground"]
-position = Vector2( 296, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D3"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D3"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Ground"]
-position = Vector2( 360, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D4"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D4"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Ground"]
-position = Vector2( 424, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D5"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D5"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="Ground"]
-position = Vector2( 488, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D6"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D6"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="Ground"]
-position = Vector2( 552, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D7"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D7"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="Ground"]
-position = Vector2( 616, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D8"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D8"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="Ground"]
-position = Vector2( 680, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D9"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D9"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D10" type="StaticBody2D" parent="Ground"]
-position = Vector2( 744, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D10"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D10"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D11" type="StaticBody2D" parent="Ground"]
-position = Vector2( 808, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D11"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D11"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="Ground"]
-position = Vector2( 872, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D12"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D12"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D13" type="StaticBody2D" parent="Ground"]
-position = Vector2( 936, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D13"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D13"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D14" type="StaticBody2D" parent="Ground"]
-position = Vector2( 1000, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D14"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D14"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D15" type="StaticBody2D" parent="Ground"]
-position = Vector2( 1064, 504 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D15"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D15"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D16" type="StaticBody2D" parent="Ground"]
-position = Vector2( 456, 440 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D16"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D16"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D17" type="StaticBody2D" parent="Ground"]
-position = Vector2( 672, 440 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D17"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D17"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D25" type="StaticBody2D" parent="Ground"]
-position = Vector2( 736, 440 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D25"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D25"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D26" type="StaticBody2D" parent="Ground"]
-position = Vector2( 800, 440 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D26"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D26"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D18" type="StaticBody2D" parent="Ground"]
-position = Vector2( 800, 288 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D18"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D18"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D19" type="StaticBody2D" parent="Ground"]
-position = Vector2( 992, 160 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D19"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D19"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D20" type="StaticBody2D" parent="Ground"]
-position = Vector2( 456, 376 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D20"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D20"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D21" type="StaticBody2D" parent="Ground"]
-position = Vector2( 456, 192 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D21"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D21"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D22" type="StaticBody2D" parent="Ground"]
-position = Vector2( 456, 128 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D22"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D22"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
-[node name="StaticBody2D23" type="StaticBody2D" parent="Ground"]
-position = Vector2( 456, 64 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D23"]
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground/StaticBody2D23"]
-color = Color( 0.27451, 0.133333, 0, 1 )
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
-
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 640, 360 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 74, 74 )
+cell_quadrant_size = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65531, 0, 0, -65530, 0, 0, 5, 0, 0, 6, 2, 0, 65541, 0, 0, 65542, 0, 0, 131077, 4, 0, 131078, 3, 0, 196613, 1, 0, 196614, 4, 0, 393227, 4, 0, 458752, 0, 0, 458753, 4, 0, 458754, 3, 0, 458755, 0, 0, 458756, 1, 0, 458759, 0, 0, 458760, 2, 0, 458761, 0, 0, 458762, 4, 0, 458763, 0, 0, 524290, 0, 0, 524297, 0, 0, 589826, 0, 0, 589833, 0, 0, 655362, 0, 0, 655369, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128, 184 )
 
 [node name="Crawler" parent="." instance=ExtResource( 2 )]
-position = Vector2( 704, 392 )
+position = Vector2( 664, 464 )
 
 [node name="Copter" parent="." instance=ExtResource( 3 )]
-position = Vector2( 344, 224 )
+position = Vector2( 440, 464 )
 
 [connection signal="hitted" from="Player" to="Camera2D" method="shake_low"]
