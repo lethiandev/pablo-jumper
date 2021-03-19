@@ -1,5 +1,7 @@
 extends "res://units/base_unit/base_unit.gd"
 
+signal hitted()
+
 const MIN_DISTANCE = 200.0
 const MAX_DISTANCE = 800.0
 const MIN_ANGLE = deg2rad(10)
@@ -73,3 +75,4 @@ func _perform_jump(angle: float, distance: float) -> void:
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.is_in_group("enemy"):
 		$RobotSkin.blink()
+		emit_signal("hitted")
