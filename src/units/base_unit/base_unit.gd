@@ -3,9 +3,14 @@ extends KinematicBody2D
 const GRAVITY = Vector2.DOWN * 800.0
 const FLOOR_ANGLE = deg2rad(40)
 
+var last_global_position = Vector2()
 var linear_velocity = Vector2()
 
 func _physics_process(delta: float) -> void:
+	# Store previous last global position
+	# Useful for stomping mechanic
+	last_global_position = global_position
+	
 	# Apply world gravity
 	_physics_process_gravity(delta)
 	
