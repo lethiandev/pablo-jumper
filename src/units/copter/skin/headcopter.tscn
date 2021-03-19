@@ -76,30 +76,30 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( -1, 1 ) ]
 }
 
-[sub_resource type="AnimationNodeAdd2" id=5]
+[sub_resource type="AnimationNodeAdd2" id=4]
 
-[sub_resource type="AnimationNodeAdd2" id=7]
+[sub_resource type="AnimationNodeAdd2" id=5]
 
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "head_idle"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "jaw_idle"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "propellers_rotate"
 
-[sub_resource type="AnimationNodeBlendTree" id=4]
+[sub_resource type="AnimationNodeBlendTree" id=9]
 graph_offset = Vector2( -544, -37 )
-nodes/Add2/node = SubResource( 5 )
+nodes/Add2/node = SubResource( 4 )
 nodes/Add2/position = Vector2( 220, 60 )
-nodes/Bobbing/node = SubResource( 7 )
+nodes/Bobbing/node = SubResource( 5 )
 nodes/Bobbing/position = Vector2( -40, 40 )
 nodes/Head/node = SubResource( 6 )
 nodes/Head/position = Vector2( -260, -20 )
-nodes/Jaw/node = SubResource( 8 )
+nodes/Jaw/node = SubResource( 7 )
 nodes/Jaw/position = Vector2( -260, 120 )
-nodes/Propellers/node = SubResource( 9 )
+nodes/Propellers/node = SubResource( 8 )
 nodes/Propellers/position = Vector2( -80, 260 )
 nodes/output/position = Vector2( 480, 160 )
 node_connections = [ "output", 0, "Add2", "Add2", 0, "Bobbing", "Add2", 1, "Propellers", "Bobbing", 0, "Head", "Bobbing", 1, "Jaw" ]
@@ -109,26 +109,30 @@ node_connections = [ "output", 0, "Add2", "Add2", 0, "Bobbing", "Add2", 1, "Prop
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 
 [node name="Polygons" type="Node2D" parent="."]
+use_parent_material = true
 
 [node name="Head" type="Polygon2D" parent="Polygons"]
-position = Vector2( 0, 2.46032 )
-rotation = -0.0177459
+use_parent_material = true
+position = Vector2( 0, -1.94555 )
+rotation = 0.0118318
 offset = Vector2( -48, -56 )
 texture = ExtResource( 1 )
 polygon = PoolVector2Array( 16, 24, 80, 24, 80, 76, 16, 76 )
 uv = PoolVector2Array( 16, 24, 80, 24, 80, 76, 16, 76 )
 
 [node name="Jaw" type="Polygon2D" parent="Polygons/Head"]
-position = Vector2( 19, 14 )
-rotation = -0.00857912
+use_parent_material = true
+position = Vector2( 19.3542, 13.9188 )
+rotation = -0.0457704
 offset = Vector2( -68, -94 )
 texture = ExtResource( 1 )
 polygon = PoolVector2Array( 16, 76, 76, 76, 76, 104, 16, 104 )
 uv = PoolVector2Array( 16, 76, 76, 76, 76, 104, 16, 104 )
 
 [node name="Propellers" type="Polygon2D" parent="Polygons/Head"]
+use_parent_material = true
 position = Vector2( 0, -35 )
-scale = Vector2( -0.691159, 1 )
+scale = Vector2( 0.556911, 1 )
 offset = Vector2( -47.5, -11.5 )
 texture = ExtResource( 1 )
 polygon = PoolVector2Array( 4, 0, 92, 0, 92, 20, 4, 20 )
@@ -140,7 +144,7 @@ anims/jaw_idle = SubResource( 2 )
 anims/propellers_rotate = SubResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 4 )
+tree_root = SubResource( 9 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/Add2/add_amount = 1.0

@@ -36,3 +36,6 @@ func _test_collision(offset: Vector2) -> bool:
 	var layer_mask = Constants.COLLISION_MASK_OBSTACLES
 	var result = space.intersect_point(point, 1, [self], layer_mask)
 	return not result.empty()
+
+func hit() -> void:
+	$RoombaSkin.blink()

@@ -12,3 +12,6 @@ func _physics_process(delta: float) -> void:
 # Disable gravity acceleration
 func _physics_process_gravity(delta: float) -> void:
 	pass
+
+func hit() -> void:
+	$HeadcopterSkin.blink()
