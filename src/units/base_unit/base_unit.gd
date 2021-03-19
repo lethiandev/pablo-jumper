@@ -17,6 +17,9 @@ func _physics_process(delta: float) -> void:
 	# Update body position and velocity
 	var lv = move_and_slide(linear_velocity, Vector2.UP, true, 4, FLOOR_ANGLE)
 	_physics_process_slide(delta, lv)
+	
+	# Update velocity on moving platforms
+	linear_velocity += get_floor_velocity() * delta
 
 # Overridable method by derived classes
 func _physics_process_gravity(delta: float) -> void:
