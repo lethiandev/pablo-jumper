@@ -4,6 +4,8 @@ export var min_amplitude: float = 50.0
 export var max_amplitude: float = -50.0
 export var direction: float = 1.0
 
+const WreckScene = preload("res://units/copter/wreck/headcopter_wreck.tscn")
+
 const ACCELERATION = 200.0
 const MAX_SPEED = 50.0
 
@@ -28,3 +30,6 @@ func _physics_process_gravity(delta: float) -> void:
 
 func internal_hit() -> void:
 	$HeadcopterSkin.blink()
+
+func internal_destroy() -> void:
+	spawn_wreckage(WreckScene)

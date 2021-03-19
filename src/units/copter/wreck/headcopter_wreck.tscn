@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://effects/wreck/wreck.tscn" type="PackedScene" id=1]
+[ext_resource path="res://effects/wreck_part/wreck_part.tscn" type="PackedScene" id=2]
+[ext_resource path="res://units/copter/wreck/headcopter_wreck.png" type="Texture" id=3]
+
+[node name="HeadcopterWreck" instance=ExtResource( 1 )]
+
+[node name="Propellers" parent="WreckParts" index="0" instance=ExtResource( 2 )]
+position = Vector2( 0, -32 )
+offset = Vector2( -48, -11 )
+texture = ExtResource( 3 )
+polygon = PoolVector2Array( 4, 0, 92, 0, 92, 24, 4, 24 )
+uv = PoolVector2Array( 4, 0, 92, 0, 92, 24, 4, 24 )
+
+[node name="Body" parent="WreckParts" index="1" instance=ExtResource( 2 )]
+offset = Vector2( -47, -53 )
+texture = ExtResource( 3 )
+polygon = PoolVector2Array( 16, 24, 80, 24, 80, 76, 16, 76 )
+uv = PoolVector2Array( 16, 24, 80, 24, 80, 76, 16, 76 )
+
+[node name="Jaw" parent="WreckParts" index="2" instance=ExtResource( 2 )]
+position = Vector2( 0, 16 )
+offset = Vector2( -47, -91 )
+texture = ExtResource( 3 )
+polygon = PoolVector2Array( 16, 76, 80, 76, 80, 104, 16, 104 )
+uv = PoolVector2Array( 16, 76, 80, 76, 80, 104, 16, 104 )
