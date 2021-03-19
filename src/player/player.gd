@@ -73,6 +73,19 @@ func _perform_jump(angle: float, distance: float) -> void:
 	idle_tick = 0.0 if angle < PI * 0.5 else 1.0
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
+	# Handle stomp on enemies
 	if body.is_in_group("enemy"):
-		$RobotSkin.blink()
-		emit_signal("hitted")
+		if _is_stomping(body):
+			body.hit()
+		else:
+			_hit()
+
+func _is_stomping(enemy: PhysicsBody2D) -> bool:
+	var dpos = global_position - last_global_position
+	var player_y = global_position.y + 40.0 - dpos.y
+	var enemy_y = enemy.global_position.y - enemy.height
+	return player_y < enemy_y and dpos.y > 0.0
+
+func _hit() -> void:
+	$RobotSkin.blink()
+	emit_signal("hitted")
