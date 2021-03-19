@@ -12,8 +12,6 @@ var jump_distance: float = 0.0
 var jump_angle: float = 0.0
 
 func _physics_process(delta: float) -> void:
-	._physics_process(delta)
-	
 	# Process state machines
 	if is_on_floor():
 		_process_state_idle(delta)

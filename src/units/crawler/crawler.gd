@@ -4,8 +4,6 @@ export(float) var speed: float = 40.0
 export(float) var direction: float = 1.0
 
 func _physics_process(delta: float) -> void:
-	._physics_process(delta)
-	
 	# Bounce crawler on the wall
 	if test_move(transform, Vector2(1.0, 0.0)):
 		direction = -1.0
