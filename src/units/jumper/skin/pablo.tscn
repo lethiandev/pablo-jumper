@@ -1,0 +1,269 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://units/jumper/skin/pablo.png" type="Texture" id=1]
+[ext_resource path="res://effects/blink/blink.gd" type="Script" id=2]
+[ext_resource path="res://effects/blink/blink.material.tres" type="Material" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D/Foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 35 ), Vector2( 0, 35 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton2D/Foot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton2D/Foot/Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 2, 0.5, 2, 0.5 ),
+"update": 0,
+"values": [ Vector2( -3, -43 ), Vector2( 0, -44 ), Vector2( 3, -43 ), Vector2( 0, -44 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton2D/Foot/Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 2, 0.5, 2, 0.5 ),
+"update": 0,
+"values": [ -94.1711, -89.9999, -84.0492, -89.9999 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D/Foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 35 ), Vector2( 0, 37 ), Vector2( 0, 35 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton2D/Foot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton2D/Foot/Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -44 ), Vector2( 0, -55 ), Vector2( 0, -44 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton2D/Foot/Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -89.9999, -89.9999 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Skeleton2D/Foot:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.858239, 1.1189 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "prepare"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D/Foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 35 ), Vector2( 0, 35 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton2D/Foot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton2D/Foot/Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -44 ), Vector2( 0, -26 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton2D/Foot/Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -89.9999, -89.9999 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "jump"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "prepare"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+advance_condition = "is_preparing"
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+advance_condition = "is_jumping"
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+advance_condition = "is_landed"
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachine" id=4]
+states/idle/node = SubResource( 6 )
+states/idle/position = Vector2( 322, 97 )
+states/jump/node = SubResource( 8 )
+states/jump/position = Vector2( 512, 188 )
+states/prepare/node = SubResource( 7 )
+states/prepare/position = Vector2( 512, 97 )
+transitions = [ "idle", "prepare", SubResource( 9 ), "prepare", "jump", SubResource( 10 ), "jump", "idle", SubResource( 11 ) ]
+start_node = "idle"
+graph_offset = Vector2( -64, 10 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+
+[node name="PabloSkin" type="Node2D"]
+material = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Foot" type="Bone2D" parent="Skeleton2D"]
+position = Vector2( 0, 35 )
+rest = Transform2D( 1, 0, 0, 1, 0, 35 )
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Foot"]
+position = Vector2( 1.90306, -43.3656 )
+rotation = -1.50491
+rest = Transform2D( 2.22127e-06, -1, 1, 2.22127e-06, 0, -44 )
+
+[node name="Polygons" type="Node2D" parent="."]
+use_parent_material = true
+
+[node name="Spring" type="Polygon2D" parent="Polygons"]
+use_parent_material = true
+position = Vector2( 0, 12 )
+offset = Vector2( -35, -81 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 16, 60, 56, 60, 56, 104, 16, 104 )
+uv = PoolVector2Array( 20, 60, 56, 60, 56, 104, 20, 104 )
+bones = [ NodePath("Foot"), PoolRealArray( 0, 0, 1, 1 ), NodePath("Foot/Head"), PoolRealArray( 1, 1, 0, 0 ) ]
+
+[node name="Head" type="Polygon2D" parent="Polygons"]
+use_parent_material = true
+position = Vector2( 0, -16 )
+offset = Vector2( -36, -40 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 8, 8, 68, 8, 68, 56, 8, 56 )
+uv = PoolVector2Array( 8, 8, 72, 8, 72, 56, 8, 56 )
+bones = [ NodePath("Foot"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Foot/Head"), PoolRealArray( 1, 1, 1, 1 ) ]
+
+[node name="Foot" type="Polygon2D" parent="Polygons"]
+use_parent_material = true
+position = Vector2( 0, 37 )
+offset = Vector2( -38, -123 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 12, 108, 64, 108, 64, 136, 12, 136 )
+uv = PoolVector2Array( 12, 108, 64, 108, 64, 136, 12, 136 )
+bones = [ NodePath("Foot"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Foot/Head"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 1 )
+anims/jump = SubResource( 3 )
+anims/prepare = SubResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 4 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 5 )
+parameters/conditions/is_jumping = false
+parameters/conditions/is_landed = false
+parameters/conditions/is_preparing = false

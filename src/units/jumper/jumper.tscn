@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://units/base_enemy/base_enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://units/jumper/skin/pablo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://units/jumper/jumper.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 38 )
+
+[node name="Jumper" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="PabloSkin" parent="." index="1" instance=ExtResource( 2 )]
+position = Vector2( 0, -3 )
