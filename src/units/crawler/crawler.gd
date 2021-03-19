@@ -1,4 +1,4 @@
-extends "res://units/base_unit/base_unit.gd"
+extends "res://units/base_enemy/base_enemy.gd"
 
 export(float) var speed: float = 40.0
 export(float) var direction: float = 1.0
