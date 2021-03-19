@@ -69,3 +69,7 @@ func _perform_jump(angle: float, distance: float) -> void:
 	var speed = JumpMath.get_jump_velocity(angle, distance)
 	linear_velocity = speed
 	idle_tick = 0.0 if angle < PI * 0.5 else 1.0
+
+func _on_body_entered(body: PhysicsBody2D) -> void:
+	if body.is_in_group("enemy"):
+		$RobotSkin.blink()
