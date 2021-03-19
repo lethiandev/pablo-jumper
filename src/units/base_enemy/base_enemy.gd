@@ -29,5 +29,10 @@ func internal_destroy() -> void:
 	# Overridable by derived classes
 	pass
 
+func spawn_wreckage(wreck_scene: PackedScene) -> void:
+	var wreck_node = wreck_scene.instance()
+	get_parent().add_child(wreck_node)
+	wreck_node.transform = transform
+
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.is_in_group("player"): hit()

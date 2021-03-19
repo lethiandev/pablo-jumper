@@ -41,6 +41,4 @@ func internal_hit() -> void:
 	$RoombaSkin.blink()
 
 func internal_destroy() -> void:
-	var wreck_node = WreckScene.instance()
-	get_parent().add_child(wreck_node)
-	wreck_node.transform = transform
+	spawn_wreckage(WreckScene)
