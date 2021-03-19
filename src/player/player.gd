@@ -25,8 +25,10 @@ func _physics_process(delta: float) -> void:
 	$RobotSkin/AnimationTree["parameters/airborne/blend_position"] = linear_velocity.y * 0.01
 
 func _physics_process_slide(delta: float, lv: Vector2) -> void:
-	if is_on_wall():  lv = get_bounce_velocity(lv)
-	if is_on_floor(): lv = Vector2(0.0, lv.y)
+	if is_on_wall():
+		lv = get_bounce_velocity(lv)
+	if is_on_floor():
+		lv = Vector2(0.0, 0.0)
 	linear_velocity = lv
 
 func _process_state_idle(delta: float) -> void:
