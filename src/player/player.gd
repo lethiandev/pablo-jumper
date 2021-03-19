@@ -3,7 +3,7 @@ extends "res://units/base_unit/base_unit.gd"
 signal hitted()
 
 const MIN_DISTANCE = 200.0
-const MAX_DISTANCE = 800.0
+const MAX_DISTANCE = 1200.0
 const MIN_ANGLE = deg2rad(10)
 const MAX_ANGLE = deg2rad(170)
 
@@ -44,7 +44,7 @@ func _process_state_idle(delta: float) -> void:
 		$RobotSkin.scale.x = face
 	
 	if Input.is_action_pressed("jump"):
-		jump_distance += 400 * delta
+		jump_distance += 800 * delta
 		jump_distance = clamp(jump_distance, MIN_DISTANCE, MAX_DISTANCE)
 		$Trajectory.visible = true
 		$Trajectory.distance = jump_distance
@@ -75,7 +75,7 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.is_in_group("enemy"):
 		if _is_stomping(body):
 			var bounced = linear_velocity.y * -0.85
-			linear_velocity.y = min(-300.0, bounced)
+			linear_velocity.y = min(-600.0, bounced)
 			body.hit()
 		else:
 			_hit()

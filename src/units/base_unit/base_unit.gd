@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const GRAVITY = Vector2.DOWN * 800.0
+const GRAVITY = Vector2.DOWN * 2400.0
 const FLOOR_ANGLE = deg2rad(40)
 
 var last_global_position = Vector2()
