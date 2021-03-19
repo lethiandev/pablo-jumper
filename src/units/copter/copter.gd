@@ -1,4 +1,4 @@
-extends "res://units/base_unit/base_unit.gd"
+extends "res://units/base_enemy/base_enemy.gd"
 
 var ticks = 0.0
 

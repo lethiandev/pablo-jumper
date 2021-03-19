@@ -1,17 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://units/base_unit/base_unit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://units/copter/copter.gd" type="Script" id=2]
 [ext_resource path="res://units/copter/skin/headcopter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://units/base_enemy/base_enemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 24 )
 
-[node name="Copter" groups=[
-"enemy",
-] instance=ExtResource( 1 )]
-collision_layer = 4
-collision_mask = 5
+[node name="Copter" instance=ExtResource( 4 )]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
