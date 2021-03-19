@@ -76,6 +76,7 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 	# Handle stomp on enemies
 	if body.is_in_group("enemy"):
 		if _is_stomping(body):
+			linear_velocity.y = min(-300.0, linear_velocity.y * -0.85)
 			body.hit()
 		else:
 			_hit()
