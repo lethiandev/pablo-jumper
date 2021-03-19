@@ -1,5 +1,8 @@
 extends Node2D
 
+const SparksScene = preload("./sparks.tscn")
+
+var sparks: CPUParticles2D
 var timer: SceneTreeTimer
 
 func _ready() -> void:
@@ -8,8 +11,13 @@ func _ready() -> void:
 		material = material.duplicate()
 
 func blink() -> void:
+	_spawn_sparks()
 	_set_coverage(1.0)
 	_start_timer(0.2)
+
+func _spawn_sparks() -> void:
+	sparks = SparksScene.instance()
+	add_child(sparks)
 
 func _start_timer(time: float) -> void:
 	_stop_timer()
