@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sparks.png-b5e0cb6eba90624b15d9d59d8f85451a.stex"
+path="res://.import/sparks.png-98b2f679c71a30d4089694ec375d0a76.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://effects/blink/sparks.png"
-dest_files=[ "res://.import/sparks.png-b5e0cb6eba90624b15d9d59d8f85451a.stex" ]
+source_file="res://effects/sparks/sparks.png"
+dest_files=[ "res://.import/sparks.png-98b2f679c71a30d4089694ec375d0a76.stex" ]
 
 [params]
 

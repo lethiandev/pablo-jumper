@@ -1,6 +1,6 @@
 extends Node
 
-const SamplerScript = preload("./sampler.gd")
+const SamplerScript = preload("res://scripts/shake/sampler.gd")
 
 var amplitude = 10.0
 var shake_x = SamplerScript.new()
@@ -15,8 +15,8 @@ func _process(p_delta: float) -> void:
 
 func _shake_it_baby(p_ticks: float) -> void:
 	offset = Vector2()
-	offset.x = shake_x.amplitude_at(ticks) * amplitude
-	offset.y = shake_y.amplitude_at(ticks) * amplitude
+	offset.x = shake_x.amplitude_at(p_ticks) * amplitude
+	offset.y = shake_y.amplitude_at(p_ticks) * amplitude
 
 func shake(p_duration: float, p_frequency: float) -> void:
 	shake_x.next(p_duration, p_frequency)

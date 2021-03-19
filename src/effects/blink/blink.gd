@@ -1,6 +1,6 @@
 extends Node2D
 
-const SparksScene = preload("./sparks.tscn")
+const SparksScene = preload("res://effects/sparks/sparks.tscn")
 
 var sparks: CPUParticles2D
 var timer: SceneTreeTimer
