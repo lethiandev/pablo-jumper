@@ -3,6 +3,8 @@ extends "res://units/base_enemy/base_enemy.gd"
 export(float) var speed: float = 40.0
 export(float) var direction: float = 1.0
 
+const WreckScene = preload("res://units/crawler/wreck/roomba_wreck.tscn")
+
 func _physics_process(delta: float) -> void:
 	# Bounce crawler on the wall
 	if test_move(transform, Vector2(1.0, 0.0)):
@@ -37,3 +39,8 @@ func _test_collision(offset: Vector2) -> bool:
 
 func internal_hit() -> void:
 	$RoombaSkin.blink()
+
+func internal_destroy() -> void:
+	var wreck_node = WreckScene.instance()
+	get_parent().add_child(wreck_node)
+	wreck_node.transform = transform
