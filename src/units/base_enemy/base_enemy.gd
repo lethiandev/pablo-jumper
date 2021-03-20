@@ -6,6 +6,12 @@ signal destroyed()
 export(int) var lives: int = 2
 export(float) var height: float = 20.0;
 
+func _process(delta: float) -> void:
+	# Destroy enemy on fall
+	if global_position.y > 720.0:
+		if not is_queued_for_deletion():
+			destroy()
+
 func hit() -> void:
 	emit_signal("hitted")
 	internal_hit()
