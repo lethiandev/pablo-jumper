@@ -4,6 +4,8 @@ export var time_wait: float = 3.0
 export var direction: float = 1.0
 export var preparing: bool = false
 
+const WreckScene = preload("res://units/jumper/wreck/pablo_wreck.tscn")
+
 var time_left: float = 0.0
 var prepare_time: float = 0.0
 
@@ -46,3 +48,6 @@ func jump() -> void:
 
 func internal_hit() -> void:
 	$PabloSkin.blink()
+
+func internal_destroy() -> void:
+	spawn_wreckage(WreckScene)
