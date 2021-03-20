@@ -1,6 +1,7 @@
 extends "res://units/base_unit/base_unit.gd"
 
 signal hitted()
+signal destroyed()
 
 const MIN_DISTANCE = 200.0
 const MAX_DISTANCE = 1200.0
@@ -11,6 +12,17 @@ var idle_tick: float = 0.0
 var jump_distance: float = 0.0
 var jump_angle: float = 0.0
 
+func _process(delta: float) -> void:
+	# Update animation tree
+	$RobotSkin/AnimationTree["parameters/conditions/on_floor"] = is_on_floor()
+	$RobotSkin/AnimationTree["parameters/conditions/in_air"] = not is_on_floor()
+	$RobotSkin/AnimationTree["parameters/airborne/blend_position"] = linear_velocity.y * 0.01
+	
+	# Destroy player on fall
+	if global_position.y > 720.0:
+		if not is_queued_for_deletion():
+			destroy()
+
 func _physics_process(delta: float) -> void:
 	# Process state machines
 	if is_on_floor():
@@ -18,11 +30,6 @@ func _physics_process(delta: float) -> void:
 		idle_tick = idle_tick + delta
 	else:
 		_process_state_jumping(delta)
-	
-	# Update animation tree
-	$RobotSkin/AnimationTree["parameters/conditions/on_floor"] = is_on_floor()
-	$RobotSkin/AnimationTree["parameters/conditions/in_air"] = not is_on_floor()
-	$RobotSkin/AnimationTree["parameters/airborne/blend_position"] = linear_velocity.y * 0.01
 
 func _physics_process_slide(delta: float, lv: Vector2) -> void:
 	if is_on_wall():
@@ -91,3 +98,7 @@ func _is_stomping(enemy: PhysicsBody2D) -> bool:
 func _hit() -> void:
 	$RobotSkin.blink()
 	emit_signal("hitted")
+
+func destroy() -> void:
+	emit_signal("destroyed")
+	queue_free()
