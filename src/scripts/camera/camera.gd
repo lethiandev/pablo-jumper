@@ -8,5 +8,5 @@ func shake_low() -> void:
 	$ShakeEffect.shake(0.5, 30.0)
 
 func shake_high() -> void:
-	$ShakeEffect.amplitude = 20.0
-	$ShakeEffect.shake(1.0, 60.0)
+	$ShakeEffect.amplitude = 28.0
+	$ShakeEffect.shake(0.8, 50.0)
