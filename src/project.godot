@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Robot Wolodi"
-run/main_scene="res://stages/sandbox/sandbox.tscn"
+run/main_scene="res://stages/laboratory_1/laboratory_1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
