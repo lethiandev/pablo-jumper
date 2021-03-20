@@ -5,7 +5,7 @@
 [ext_resource path="res://scripts/camera/camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stages/base_stage/chasm.material.tres" type="Material" id=4]
 [ext_resource path="res://stages/backgrounds/foreground.png" type="Texture" id=5]
-[ext_resource path="res://stages/backgrounds/background_5.png" type="Texture" id=6]
+[ext_resource path="res://stages/backgrounds/background_1.png" type="Texture" id=6]
 
 [node name="BaseStage" type="Node"]
 script = ExtResource( 1 )
