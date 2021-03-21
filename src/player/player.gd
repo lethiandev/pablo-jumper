@@ -50,11 +50,13 @@ func _process_state_idle(delta: float) -> void:
 		jump(jump_angle, jump_distance)
 		jump_distance = 0.0
 		$Angle.visible = false
+		$PrepareStreamPlayer.stop()
 	
 	if Input.is_action_just_pressed("jump"):
 		# Rotate skin facing on jump direction
 		var face = -1.0 if jump_angle > PI * 0.5 else 1.0
 		$RobotSkin.scale.x = face
+		$PrepareStreamPlayer.play()
 	
 	if Input.is_action_pressed("jump"):
 		jump_distance += 800 * delta
@@ -77,6 +79,7 @@ func _process_state_free(delta: float) -> void:
 func jump(angle: float, distance: float) -> void:
 	if is_on_floor():
 		_perform_jump(angle, distance)
+		$JumpStreamPlayer.play()
 
 func _perform_jump(angle: float, distance: float) -> void:
 	var speed = JumpMath.get_jump_velocity(angle, distance)
