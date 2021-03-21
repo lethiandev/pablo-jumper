@@ -124,6 +124,7 @@ func _take_damage() -> void:
 
 func destroy() -> void:
 	emit_signal("destroyed")
+	GameState.energy = 0
 	spawn_wreckage()
 	queue_free()
 
