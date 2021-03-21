@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Robot Wolodi"
+config/name="Pablo Jumper"
 run/main_scene="res://stages/laboratory_1/laboratory_1.tscn"
 config/icon="res://icon.png"
 
