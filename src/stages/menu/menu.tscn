@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://stages/menu/logo.png" type="Texture" id=1]
 [ext_resource path="res://stages/menu/menu.gd" type="Script" id=2]
 [ext_resource path="res://ui/fonts/xolonium_x28.tres" type="DynamicFont" id=3]
 [ext_resource path="res://stages/backgrounds/background_2.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/xolonium_x48.tres" type="DynamicFont" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "loop"
@@ -75,9 +76,9 @@ anims/loop = SubResource( 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -118.0
-custom_fonts/font = ExtResource( 3 )
-text = "Press SPACE BAR to continue"
+margin_top = -235.0
+custom_fonts/font = ExtResource( 5 )
+text = "Press SPACE BAR to start"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -86,3 +87,17 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StartHint"]
 autoplay = "loop"
 anims/loop = SubResource( 2 )
+
+[node name="Credits" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -43.0
+margin_right = -8.0
+margin_bottom = -8.0
+custom_fonts/font = ExtResource( 3 )
+text = "Game made for Godot Wild Jam #31"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
