@@ -8,5 +8,11 @@ Controls:
 
 ## Credits
 
-Lethian - Programming, game design, animating
-Judyn - Graphics, level design
+Lethian - Programming, Game Design, Animating
+<br>Judyn - Graphics
+
+Also thanks for providing free sounds assets for:
+- Music by Alexandr Zhelanov from https://opengameart.org/
+- Metal robot collapse from https://mixkit.co/
+- Robot punch from https://99sounds.org/
+- Additional sound effects from https://www.zapsplat.com
