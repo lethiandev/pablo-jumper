@@ -52,6 +52,7 @@ func _on_door_entered(door: Node, body: Node) -> void:
 		body.freeze()
 		yield(door.open(), "completed")
 		yield(get_tree().create_timer(0.2), "timeout")
+		GameState.add_score(500)
 		_stage_advance()
 
 func _stage_restart() -> void:
