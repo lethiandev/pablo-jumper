@@ -8,7 +8,6 @@
 "enemy",
 ] instance=ExtResource( 1 )]
 collision_layer = 4
-collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="HitStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
