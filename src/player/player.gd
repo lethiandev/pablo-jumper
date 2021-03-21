@@ -102,6 +102,7 @@ func _is_stomping(enemy: PhysicsBody2D) -> bool:
 
 func _hit() -> void:
 	$RobotSkin.blink()
+	$HitStreamPlayer.play()
 	emit_signal("hitted")
 
 func destroy() -> void:
