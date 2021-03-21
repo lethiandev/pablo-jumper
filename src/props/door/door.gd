@@ -1,6 +1,6 @@
 extends Node2D
 
-signal body_entered(body)
+signal body_entered(door, body)
 
 export var opened: bool = false \
 	setget set_opened, is_open
@@ -18,9 +18,13 @@ func _process(delta: float) -> void:
 
 func open() -> void:
 	set_opened(true)
+	# Wait for tween to complete animation
+	yield($DoorMask/Viewport/DoorWings/Tween, "tween_completed")
 
 func close() -> void:
 	set_opened(false)
+	# Wait for tween to complete animation
+	yield($DoorMask/Viewport/DoorWings/Tween, "tween_completed")
 
 func lock() -> void:
 	locked = true
@@ -45,4 +49,4 @@ func is_locked() -> bool:
 	return locked
 
 func _on_body_entered(body):
-	emit_signal("body_entered", body)
+	emit_signal("body_entered", self, body)
