@@ -3,6 +3,8 @@ extends "res://units/base_unit/base_unit.gd"
 signal hitted()
 signal destroyed()
 
+const WreckScene = preload("res://player/wreck/robot_wreck.tscn")
+
 const MIN_DISTANCE = 200.0
 const MAX_DISTANCE = 1200.0
 const MIN_ANGLE = deg2rad(10)
@@ -107,4 +109,10 @@ func _hit() -> void:
 
 func destroy() -> void:
 	emit_signal("destroyed")
+	spawn_wreckage()
 	queue_free()
+
+func spawn_wreckage() -> void:
+	var wreck_node = WreckScene.instance()
+	get_parent().add_child(wreck_node)
+	wreck_node.transform = transform
