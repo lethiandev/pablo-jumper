@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://props/door/door_wings.png" type="Texture" id=1]
+[ext_resource path="res://props/door/door_wings.gd" type="Script" id=2]
+
+[node name="DoorWings" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="WingLeft" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( -28, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 82, 148 )
+
+[node name="WingRight" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 28, 0 )
+region_enabled = true
+region_rect = Rect2( 82, 0, 82, 148 )
+
+[node name="Tween" type="Tween" parent="."]

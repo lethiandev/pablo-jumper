@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://props/door/door_frame.png" type="Texture" id=1]
+[ext_resource path="res://props/door/door_mask.tscn" type="PackedScene" id=2]
+[ext_resource path="res://props/door/door.gd" type="Script" id=3]
+
+[node name="Door" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="DoorFrame" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -2 )
+
+[node name="DoorMask" parent="." instance=ExtResource( 2 )]
