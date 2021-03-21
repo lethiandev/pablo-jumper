@@ -49,7 +49,9 @@ func _on_door_entered(door: Node, body: Node) -> void:
 func _stage_restart() -> void:
 	yield(Transition.fade_out(), "completed")
 	get_tree().reload_current_scene()
+	GameState.revert_state()
 
 func _stage_advance() -> void:
 	yield(Transition.fade_out(), "completed")
 	get_tree().change_scene(next_stage)
+	GameState.advance_state()

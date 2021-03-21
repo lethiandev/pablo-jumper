@@ -96,8 +96,14 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 			var bounced = linear_velocity.y * -0.85
 			linear_velocity.y = min(-600.0, bounced)
 			body.hit()
+			_add_score(body)
 		else:
-			_hit()
+			hit()
+
+func _add_score(enemy: Node) -> void:
+	var lives = enemy.lives
+	var score = 100 if lives > 0 else 200
+	GameState.add_score(score)
 
 func _is_stomping(enemy: PhysicsBody2D) -> bool:
 	var dpos = global_position - last_global_position
@@ -105,7 +111,13 @@ func _is_stomping(enemy: PhysicsBody2D) -> bool:
 	var enemy_y = enemy.global_position.y - enemy.height
 	return player_y < enemy_y and dpos.y > 0.0
 
-func _hit() -> void:
+func hit() -> void:
+	if GameState.take_energy() <= 0:
+		destroy()
+	else:
+		_take_damage()
+
+func _take_damage() -> void:
 	$RobotSkin.blink()
 	$HitStreamPlayer.play()
 	emit_signal("hitted")
