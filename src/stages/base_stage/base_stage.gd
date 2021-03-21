@@ -41,6 +41,7 @@ func _on_player_destroyed(player: Node) -> void:
 
 func _on_door_entered(door: Node, body: Node) -> void:
 	if body.is_in_group("player"):
+		body.freeze()
 		yield(door.open(), "completed")
 		_stage_advance()
 
