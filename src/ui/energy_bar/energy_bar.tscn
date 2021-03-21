@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/energy_bar/energy_status.png" type="Texture" id=1]
+[ext_resource path="res://ui/energy_bar/energy_bar.png" type="Texture" id=2]
+[ext_resource path="res://ui/energy_bar/energy_bar.gd" type="Script" id=3]
+
+[node name="EnergyBar" type="TextureRect"]
+margin_right = 131.0
+margin_bottom = 52.0
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+vframes = 4
+frame = 3
