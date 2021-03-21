@@ -1,16 +1,13 @@
 extends "res://units/base_enemy/base_enemy.gd"
 
 export var time_wait: float = 3.0
+export var time_left: float = 3.0
 export var direction: float = 1.0
 export var preparing: bool = false
 
 const WreckScene = preload("res://units/jumper/wreck/pablo_wreck.tscn")
 
-var time_left: float = 0.0
 var prepare_time: float = 0.0
-
-func _ready() -> void:
-	time_left = time_wait
 
 func _process(delta: float) -> void:
 	$PabloSkin/AnimationTree["parameters/conditions/is_landed"] = is_on_floor()
@@ -43,6 +40,7 @@ func _physics_process_slide(delta: float, lv: Vector2) -> void:
 	linear_velocity = lv
 
 func jump() -> void:
+	$JumpStreamPlayer.play()
 	var n = Vector2(direction, -4.0).normalized()
 	linear_velocity = n * 800.0
 

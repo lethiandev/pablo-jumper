@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://units/base_enemy/base_enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://units/jumper/skin/pablo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://units/jumper/jumper.gd" type="Script" id=3]
+[ext_resource path="res://player/sounds/jump.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 38 )
@@ -15,3 +16,7 @@ shape = SubResource( 1 )
 
 [node name="PabloSkin" parent="." index="1" instance=ExtResource( 2 )]
 position = Vector2( 0, -3 )
+
+[node name="JumpStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 4 )
+volume_db = -12.0
