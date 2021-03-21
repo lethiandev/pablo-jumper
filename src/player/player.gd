@@ -12,6 +12,8 @@ var idle_tick: float = 0.0
 var jump_distance: float = 0.0
 var jump_angle: float = 0.0
 
+var frozen: bool = false
+
 func _process(delta: float) -> void:
 	# Update animation tree
 	$RobotSkin/AnimationTree["parameters/conditions/on_floor"] = is_on_floor()
@@ -25,11 +27,11 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Process state machines
-	if is_on_floor():
+	if is_on_floor() and not frozen:
 		_process_state_idle(delta)
 		idle_tick = idle_tick + delta
 	else:
-		_process_state_jumping(delta)
+		_process_state_free(delta)
 
 func _physics_process_slide(delta: float, lv: Vector2) -> void:
 	if is_on_wall():
@@ -66,7 +68,7 @@ func _process_state_idle(delta: float) -> void:
 	var preparing = Input.is_action_pressed("jump")
 	$RobotSkin/AnimationTree["parameters/conditions/prepare"] = preparing
 
-func _process_state_jumping(delta: float) -> void:
+func _process_state_free(delta: float) -> void:
 	$Angle.visible = false
 	$Trajectory.visible = false
 
@@ -78,6 +80,9 @@ func _perform_jump(angle: float, distance: float) -> void:
 	var speed = JumpMath.get_jump_velocity(angle, distance)
 	linear_velocity = speed
 	idle_tick = 0.0 if angle < PI * 0.5 else 1.0
+
+func freeze() -> void:
+	frozen = true
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	# Handle stomp on enemies
