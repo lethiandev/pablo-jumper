@@ -18,11 +18,13 @@ func _process(delta: float) -> void:
 
 func open() -> void:
 	set_opened(true)
+	$DoorStreamPlayer.play()
 	# Wait for tween to complete animation
 	yield($DoorMask/Viewport/DoorWings/Tween, "tween_completed")
 
 func close() -> void:
 	set_opened(false)
+	$DoorStreamPlayer.play()
 	# Wait for tween to complete animation
 	yield($DoorMask/Viewport/DoorWings/Tween, "tween_completed")
 

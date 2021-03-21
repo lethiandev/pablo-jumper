@@ -16,6 +16,10 @@ func hit() -> void:
 	emit_signal("hitted")
 	internal_hit()
 	take_life()
+	
+	# Play hit sound effect
+	if lives > 0:
+		$HitStreamPlayer.play()
 
 func take_life() -> void:
 	lives = lives - 1

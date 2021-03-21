@@ -1,15 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://props/door/door_parts/door_frame.png" type="Texture" id=1]
 [ext_resource path="res://props/door/door_parts/door_mask.tscn" type="PackedScene" id=2]
 [ext_resource path="res://props/door/door.gd" type="Script" id=3]
 [ext_resource path="res://props/door/light.png" type="Texture" id=4]
+[ext_resource path="res://props/door/doors.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53, 9 )
 
 [node name="Door" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="DoorStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+volume_db = -10.0
 
 [node name="DoorFrame" type="Sprite" parent="."]
 texture = ExtResource( 1 )

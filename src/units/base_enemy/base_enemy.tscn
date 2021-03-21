@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://units/base_unit/base_unit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://units/base_enemy/base_enemy.gd" type="Script" id=2]
+[ext_resource path="res://units/base_enemy/hit.wav" type="AudioStream" id=3]
 
 [node name="BaseEnemy" groups=[
 "enemy",
@@ -9,3 +10,8 @@
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 2 )
+
+[node name="HitStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
+pause_mode = 2
+stream = ExtResource( 3 )
+volume_db = -10.0
