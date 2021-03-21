@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/fonts/xolonium_x64.tres" type="DynamicFont" id=1]
+[ext_resource path="res://stages/backgrounds/background_5.png" type="Texture" id=2]
+[ext_resource path="res://ui/fonts/xolonium_x28.tres" type="DynamicFont" id=3]
+[ext_resource path="res://stages/game_over/score_result.gd" type="Script" id=4]
+[ext_resource path="res://stages/game_over/game_over.gd" type="Script" id=5]
+
+[node name="GameOverStage" type="Node"]
+script = ExtResource( 5 )
+menu_stage = "res://stages/menu/menu.tscn"
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 306.0
+custom_fonts/font = ExtResource( 1 )
+text = "GAME OVER"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreResult" type="Label" parent="."]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -374.0
+custom_fonts/font = ExtResource( 3 )
+text = "Your final score:
+%d
+Best score so far:
+%d"
+align = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
