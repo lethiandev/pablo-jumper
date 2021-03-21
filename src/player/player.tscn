@@ -2,7 +2,7 @@
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/trajectory.gd" type="Script" id=2]
-[ext_resource path="res://player/angle.gd" type="Script" id=3]
+[ext_resource path="res://player/trajectory_cursor.png" type="Texture" id=3]
 [ext_resource path="res://player/skin/robot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://units/base_enemy/hit.wav" type="AudioStream" id=5]
 [ext_resource path="res://player/sounds/jump.wav" type="AudioStream" id=6]
@@ -55,6 +55,9 @@ script = ExtResource( 2 )
 
 [node name="Angle" type="Node2D" parent="."]
 visible = false
-script = ExtResource( 3 )
+
+[node name="Cursor" type="Sprite" parent="Angle"]
+position = Vector2( 100, 0 )
+texture = ExtResource( 3 )
 
 [connection signal="body_entered" from="Detector" to="." method="_on_body_entered"]

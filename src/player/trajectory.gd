@@ -1,11 +1,13 @@
 extends Node2D
 
+const DotTexture = preload("./trajectory_dot.png")
+
 const COLOR = Color(1.0, 1.0, 1.0)
 const OBSTACLE_MASK = 0x01
 
 var angle: float = 0.0
 var distance: float = 0.0
-var iterations: int = 12
+var iterations: int = 20
 
 func _process(_delta: float) -> void:
 	if is_visible_in_tree():
@@ -19,17 +21,16 @@ func _draw_trajectory() -> void:
 	var colors = PoolColorArray()
 	var factor = 1.0 / iterations
 	
-	for i in range(points.size()):
-		var alpha = 0.25 * (1.0 - i * factor)
+	for i in range(1, points.size()):
+		var alpha = 1.0 - i * factor
+		var point = points[i] - DotTexture.get_size() * 0.5
 		var color = COLOR
 		color.a = alpha
-		colors.push_back(color)
-	
-	draw_polyline_colors(points, colors, 8.0)
+		draw_texture(DotTexture, point, color)
 
 func _get_trajectory_points() -> PoolVector2Array:
 	var gravity = get_parent().GRAVITY
-	var points = JumpMath.get_jump_arc_points(angle, distance, gravity, iterations)
+	var points = JumpMath.get_jump_arc_points(angle, distance, gravity, iterations, 1.0 / 18.0)
 	var space = get_world_2d().get_direct_space_state()
 	
 	for i in range(points.size() - 1):
