@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://stages/base_stage/base_stage.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/laboratory/laboratory.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://stages/backgrounds/foreground.png" type="Texture" id=5]
 [ext_resource path="res://stages/backgrounds/background_1.png" type="Texture" id=6]
 [ext_resource path="res://props/door/door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://stages/base_stage/room_frame.gd" type="Script" id=8]
 
 [node name="BaseStage" type="Node"]
 script = ExtResource( 1 )
@@ -50,6 +51,7 @@ margin_top = -489.0
 margin_right = 769.0
 margin_bottom = 489.0
 texture = ExtResource( 5 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,5 +77,4 @@ position = Vector2( 998, 370 )
 
 [node name="Units" type="Node2D" parent="."]
 
-[connection signal="ready" from="Foreground/RoomFrame" to="Foreground/RoomFrame" method="show"]
 [connection signal="body_entered" from="TileMap/DoorEnd" to="." method="_on_door_entered"]
