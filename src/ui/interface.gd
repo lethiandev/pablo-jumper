@@ -7,3 +7,9 @@ func _process(delta: float) -> void:
 	var energy = GameState.energy
 	$Container/Score.text = score_format % score
 	$Container/EnergyBar.energy = energy
+
+func show() -> void:
+	$Container.show()
+
+func hide() -> void:
+	$Container.hide()

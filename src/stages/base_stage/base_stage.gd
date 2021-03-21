@@ -6,6 +6,9 @@ func _ready() -> void:
 	_prepare_game()
 	_connect_units()
 	
+	# Show interface controls
+	Interface.show()
+	
 	# Start level transition
 	Transition.fade_in()
 

@@ -8,4 +8,5 @@ func _process(delta: float) -> void:
 		get_tree().change_scene(start_stage)
 
 func _ready():
+	Interface.hide()
 	GameState.reset_state()

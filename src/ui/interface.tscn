@@ -24,15 +24,15 @@ __meta__ = {
 
 [node name="Spacer" type="Control" parent="Container"]
 margin_left = 141.0
-margin_right = 1116.0
+margin_right = 1101.0
 margin_bottom = 52.0
 size_flags_horizontal = 3
 
 [node name="Score" type="Label" parent="Container"]
-margin_left = 1126.0
-margin_top = 11.0
+margin_left = 1111.0
+margin_top = 8.0
 margin_right = 1260.0
-margin_bottom = 41.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 1 )
 text = "Score: %d"
 align = 2
