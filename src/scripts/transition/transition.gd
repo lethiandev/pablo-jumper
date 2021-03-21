@@ -7,9 +7,11 @@ func _ready() -> void:
 	$ColorRect.visible = false
 
 func fade_out() -> void:
+	_set_curtain_progress(0.0)
 	yield(transit("fade_out"), "completed")
 
 func fade_in() -> void:
+	_set_curtain_progress(1.0)
 	yield(transit("fade_in"), "completed")
 
 func transit(anim_name: String) -> void:
@@ -30,3 +32,7 @@ func _on_animation_finished(anim_name: String) -> void:
 func _after_curtain_open() -> void:
 	get_tree().set_pause(false)
 	$ColorRect.visible = false
+
+func _set_curtain_progress(value: float) -> void:
+	if $ColorRect.material is ShaderMaterial:
+		$ColorRect.material.set_shader_param("progress", value)
