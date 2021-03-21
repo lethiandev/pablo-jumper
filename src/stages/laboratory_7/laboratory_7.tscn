@@ -59,6 +59,7 @@ tracks/0/keys = {
 }
 
 [node name="LaboratoryStage_7" instance=ExtResource( 1 )]
+next_stage = "res://stages/game_over/game_over.tscn"
 
 [node name="Wallpaper" parent="Background" index="0"]
 texture = ExtResource( 4 )
