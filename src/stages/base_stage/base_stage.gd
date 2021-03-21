@@ -40,7 +40,12 @@ func _on_player_hitted(player: Node) -> void:
 
 func _on_player_destroyed(player: Node) -> void:
 	yield($Camera2D.shake_high(), "completed")
-	_stage_restart()
+	
+	# Take life and do restart or game over
+	if GameState.take_life() <= 0:
+		_stage_game_over()
+	else:
+		_stage_restart()
 
 func _on_door_entered(door: Node, body: Node) -> void:
 	if body.is_in_group("player"):
@@ -58,3 +63,7 @@ func _stage_advance() -> void:
 	yield(Transition.fade_out(), "completed")
 	get_tree().change_scene(next_stage)
 	GameState.advance_state()
+
+func _stage_game_over() -> void:
+	yield(Transition.fade_out(), "completed")
+	get_tree().change_scene("res://stages/game_over/game_over.tscn")
