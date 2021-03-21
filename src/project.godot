@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Transition="*res://scripts/transition/transition.tscn"
+MusicManager="*res://scripts/music_manager/music_manager.tscn"
 
 [display]
 
