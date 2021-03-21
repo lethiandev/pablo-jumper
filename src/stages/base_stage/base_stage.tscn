@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://stages/base_stage/base_stage.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/laboratory/laboratory.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://stages/base_stage/chasm.material.tres" type="Material" id=4]
 [ext_resource path="res://stages/backgrounds/foreground.png" type="Texture" id=5]
 [ext_resource path="res://stages/backgrounds/background_1.png" type="Texture" id=6]
+[ext_resource path="res://props/door/door.tscn" type="PackedScene" id=7]
 
 [node name="BaseStage" type="Node"]
 script = ExtResource( 1 )
@@ -63,4 +64,14 @@ cell_quadrant_size = 8
 collision_mask = 0
 format = 1
 
+[node name="DoorStart" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 259, 370 )
+opened = true
+locked = true
+
+[node name="DoorEnd" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 998, 370 )
+
 [node name="Units" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="TileMap/DoorEnd" to="." method="_on_door_entered"]
