@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://props/door/door_parts/door_frame.png" type="Texture" id=1]
 [ext_resource path="res://props/door/door_parts/door_mask.tscn" type="PackedScene" id=2]
 [ext_resource path="res://props/door/door.gd" type="Script" id=3]
+[ext_resource path="res://props/door/light.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 10 )
@@ -15,6 +16,11 @@ texture = ExtResource( 1 )
 offset = Vector2( 0, -2 )
 
 [node name="DoorMask" parent="." instance=ExtResource( 2 )]
+
+[node name="Light" type="Sprite" parent="."]
+position = Vector2( 0, -85 )
+texture = ExtResource( 4 )
+vframes = 2
 
 [node name="Observable" type="Area2D" parent="."]
 position = Vector2( 0, 66 )

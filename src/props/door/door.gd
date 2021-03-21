@@ -11,6 +11,10 @@ func _process(delta: float) -> void:
 	# Close door automatically on lock
 	if is_locked() and is_open():
 		close()
+	
+	# Update door light
+	var light_frame = 0 if is_locked() else 1
+	$Light.frame = light_frame
 
 func open() -> void:
 	set_opened(true)
