@@ -14,4 +14,4 @@ tile_data = PoolIntArray( 262151, 4, 0, 262152, 4, 0, 262153, 3, 0, 393217, 2, 0
 position = Vector2( 264, 408 )
 
 [node name="Crawler" parent="Units" index="1" instance=ExtResource( 3 )]
-position = Vector2( 616, 264 )
+position = Vector2( 640, 297 )
