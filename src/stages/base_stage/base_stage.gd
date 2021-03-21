@@ -43,6 +43,7 @@ func _on_door_entered(door: Node, body: Node) -> void:
 	if body.is_in_group("player"):
 		body.freeze()
 		yield(door.open(), "completed")
+		yield(get_tree().create_timer(0.2), "timeout")
 		_stage_advance()
 
 func _stage_restart() -> void:
