@@ -1,7 +1,7 @@
 extends Node
 
 const START_ENERGY = 3
-const START_LIVES = 3
+const START_LIVES = 4
 
 var current_score: int = 0
 var previous_score: int = 0
