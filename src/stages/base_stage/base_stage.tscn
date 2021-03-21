@@ -40,6 +40,7 @@ __meta__ = {
 }
 
 [node name="RoomFrame" type="TextureRect" parent="Foreground"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -74,4 +75,5 @@ position = Vector2( 998, 370 )
 
 [node name="Units" type="Node2D" parent="."]
 
+[connection signal="ready" from="Foreground/RoomFrame" to="Foreground/RoomFrame" method="show"]
 [connection signal="body_entered" from="TileMap/DoorEnd" to="." method="_on_door_entered"]
