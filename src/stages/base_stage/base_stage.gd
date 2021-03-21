@@ -5,7 +5,7 @@ func _ready() -> void:
 	_connect_units()
 	
 	# Start level transition
-	Transition.transit_fade_in()
+	Transition.fade_in()
 
 func _prepare_game() -> void:
 	randomize()
@@ -34,4 +34,6 @@ func _on_player_hitted(player: Node) -> void:
 	$Camera2D.shake_low()
 
 func _on_player_destroyed(player: Node) -> void:
-	$Camera2D.shake_high()
+	yield($Camera2D.shake_high(), "completed")
+	yield(Transition.fade_out(), "completed")
+	get_tree().reload_current_scene()
