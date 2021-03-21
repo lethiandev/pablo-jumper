@@ -5,6 +5,7 @@ const START_LIVES = 3
 
 var current_score: int = 0
 var previous_score: int = 0
+var best_score: int = 0
 var energy: int = START_ENERGY
 var lives: int = START_LIVES
 
@@ -26,7 +27,15 @@ func advance_state() -> void:
 
 func add_score(score: int) -> void:
 	current_score += score
+	
+	# Store best score so far
+	if best_score < current_score:
+		best_score = current_score
 
 func take_energy() -> int:
 	energy = max(0, energy - 1)
 	return energy
+
+func take_life() -> int:
+	lives = max(0, lives - 1)
+	return lives
