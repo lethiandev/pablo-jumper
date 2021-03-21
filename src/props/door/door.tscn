@@ -6,7 +6,7 @@
 [ext_resource path="res://props/door/light.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 62, 9 )
+extents = Vector2( 53, 9 )
 
 [node name="Door" type="Node2D"]
 script = ExtResource( 3 )
