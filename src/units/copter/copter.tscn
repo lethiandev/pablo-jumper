@@ -11,6 +11,7 @@ extents = Vector2( 24, 24 )
 
 [node name="Copter" instance=ExtResource( 4 )]
 script = ExtResource( 2 )
+height = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
