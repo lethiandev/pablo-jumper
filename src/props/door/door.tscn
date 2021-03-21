@@ -6,7 +6,7 @@
 [ext_resource path="res://props/door/light.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 62, 4 )
+extents = Vector2( 62, 9 )
 
 [node name="Door" type="Node2D"]
 script = ExtResource( 3 )
@@ -23,7 +23,7 @@ texture = ExtResource( 4 )
 vframes = 2
 
 [node name="Observable" type="Area2D" parent="."]
-position = Vector2( 0, 71 )
+position = Vector2( 0, 67 )
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Observable"]
