@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://ui/fonts/xolonium_x24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/fonts/xolonium_x28.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ui/interface.gd" type="Script" id=2]
 [ext_resource path="res://ui/energy_bar/energy_bar.tscn" type="PackedScene" id=3]
 
