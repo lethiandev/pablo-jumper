@@ -8,8 +8,8 @@ Controls:
 
 ## Credits
 
-Lethian - Programming, Game Design, Animating
-<br>Judyn - Graphics
+Lethian (Me) - Programming, Game Design, Animating
+<br>Jakub Judyn Nowakowski - Graphics
 
 Also thanks for providing free sounds assets for:
 - Music by Alexandr Zhelanov from https://opengameart.org/
