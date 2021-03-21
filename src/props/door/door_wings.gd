@@ -25,7 +25,7 @@ func _update_tween() -> void:
 		var from = 1.0 if previous_state else 0.0
 		var to = 0.0 if previous_state else 1.0
 		$Tween.interpolate_method(self, "_tween_doors", from, to, 0.2)
-		$Tween.start()
+		$Tween.call_deferred("start")
 
 func _tween_doors(value: float) -> void:
 	$WingLeft.position.x = value * -48.0
