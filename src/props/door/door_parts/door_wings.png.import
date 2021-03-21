@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door_mask.png-024ba7dbbbfd424c9d409724d8a0c25c.stex"
+path="res://.import/door_wings.png-6859cba26dc1d13ca1dab9e062069a0e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/door/door_mask.png"
-dest_files=[ "res://.import/door_mask.png-024ba7dbbbfd424c9d409724d8a0c25c.stex" ]
+source_file="res://props/door/door_parts/door_wings.png"
+dest_files=[ "res://.import/door_wings.png-6859cba26dc1d13ca1dab9e062069a0e.stex" ]
 
 [params]
 
