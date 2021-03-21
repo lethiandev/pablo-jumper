@@ -1,5 +1,7 @@
 extends Node
 
+export(String, FILE, "*.tscn") var next_stage: String
+
 func _ready() -> void:
 	_prepare_game()
 	_connect_units()
@@ -35,5 +37,17 @@ func _on_player_hitted(player: Node) -> void:
 
 func _on_player_destroyed(player: Node) -> void:
 	yield($Camera2D.shake_high(), "completed")
+	_stage_restart()
+
+func _on_door_entered(door: Node, body: Node) -> void:
+	if body.is_in_group("player"):
+		yield(door.open(), "completed")
+		_stage_advance()
+
+func _stage_restart() -> void:
 	yield(Transition.fade_out(), "completed")
 	get_tree().reload_current_scene()
+
+func _stage_advance() -> void:
+	yield(Transition.fade_out(), "completed")
+	get_tree().change_scene(next_stage)
