@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.svg-a81a3c2b9e033136e07e68db59b23126.stex"
+path="res://.import/light.png-219199dd3b9a595cf698a17bd8f6ea3f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/door/light.svg"
-dest_files=[ "res://.import/light.svg-a81a3c2b9e033136e07e68db59b23126.stex" ]
+source_file="res://props/door/door_parts/light.png"
+dest_files=[ "res://.import/light.png-219199dd3b9a595cf698a17bd8f6ea3f.stex" ]
 
 [params]
 
