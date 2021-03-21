@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://stages/base_stage/base_stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://units/crawler/crawler.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stages/backgrounds/background_4.png" type="Texture" id=4]
+
+[node name="LaboratoryStage_3" instance=ExtResource( 1 )]
+next_stage = "res://stages/laboratory_4/laboratory_4.tscn"
+
+[node name="Wallpaper" parent="Background" index="0"]
+texture = ExtResource( 4 )
+
+[node name="TileMap" parent="." index="3"]
+tile_data = PoolIntArray( 196612, 4, 0, 196613, 0, 0, 196614, 2, 0, 196615, 0, 0, 196616, 4, 0, 196617, 1, 0, 458759, 0, 0, 458760, 4, 0, 458761, 3, 0, 458764, 0, 0, 458765, 2, 0, 524295, 2, 0, 524296, 0, 0, 524297, 0, 0 )
+
+[node name="DoorStart" parent="TileMap" index="0"]
+position = Vector2( 629, 148 )
+
+[node name="DoorEnd" parent="TileMap" index="1"]
+position = Vector2( 636, 444 )
+
+[node name="Player" parent="Units" index="0" instance=ExtResource( 2 )]
+position = Vector2( 640, 190 )
+
+[node name="Crawler" parent="Units" index="1" instance=ExtResource( 3 )]
+position = Vector2( 360, 224 )

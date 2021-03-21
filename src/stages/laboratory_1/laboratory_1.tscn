@@ -5,7 +5,7 @@
 [ext_resource path="res://units/crawler/crawler.tscn" type="PackedScene" id=3]
 
 [node name="LaboratoryStage_1" instance=ExtResource( 1 )]
-next_stage = "res://stages/laboratory_1/laboratory_1.tscn"
+next_stage = "res://stages/laboratory_2/laboratory_2.tscn"
 
 [node name="TileMap" parent="." index="3"]
 tile_data = PoolIntArray( 262151, 4, 0, 262152, 4, 0, 262153, 3, 0, 393217, 2, 0, 393218, 4, 0, 393219, 4, 0, 393220, 1, 0, 393221, 0, 0, 393227, 0, 0, 393228, 2, 0, 393229, 0, 0, 393230, 4, 0, 393231, 0, 0 )
