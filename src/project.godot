@@ -36,6 +36,7 @@ Transition="*res://scripts/transition/transition.tscn"
 MusicManager="*res://scripts/music_manager/music_manager.tscn"
 Interface="*res://ui/interface.tscn"
 GameState="*res://scripts/game_state/game_state.gd"
+TouchSim="*res://scripts/touch_sim/touch_sim.gd"
 
 [display]
 
