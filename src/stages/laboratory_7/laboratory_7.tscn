@@ -78,6 +78,7 @@ position = Vector2( 679, 267 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/PlatformSmall" index="2"]
 autoplay = "loop"
+playback_process_mode = 0
 playback_speed = 0.2
 anims/loop = SubResource( 1 )
 
@@ -86,6 +87,7 @@ position = Vector2( 579, 267 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/PlatformSmall2" index="2"]
 autoplay = "loop"
+playback_process_mode = 0
 playback_speed = 0.2
 anims/loop = SubResource( 2 )
 
@@ -94,6 +96,7 @@ position = Vector2( 629, 526 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/PlatformWide" index="2"]
 autoplay = "loop"
+playback_process_mode = 0
 playback_speed = 0.1
 anims/loop = SubResource( 3 )
 
