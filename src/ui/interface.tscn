@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ui/fonts/xolonium_x28.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ui/interface.gd" type="Script" id=2]
 [ext_resource path="res://ui/energy_bar/energy_bar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ui/lives/lives.png" type="Texture" id=4]
-[ext_resource path="res://ui/lives/lives.gd" type="Script" id=5]
 
 [node name="Interface" type="CanvasLayer"]
 pause_mode = 2
@@ -23,29 +21,19 @@ __meta__ = {
 }
 
 [node name="EnergyBar" parent="Container" instance=ExtResource( 3 )]
-margin_bottom = 68.0
-
-[node name="Lives" type="TextureRect" parent="Container"]
-margin_left = 141.0
-margin_right = 201.0
 margin_bottom = 62.0
-rect_min_size = Vector2( 60, 62 )
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
-script = ExtResource( 5 )
 
 [node name="Spacer" type="Control" parent="Container"]
-margin_left = 211.0
+margin_left = 141.0
 margin_right = 1101.0
-margin_bottom = 68.0
+margin_bottom = 62.0
 size_flags_horizontal = 3
 
 [node name="Score" type="Label" parent="Container"]
 margin_left = 1111.0
-margin_top = 16.0
+margin_top = 13.0
 margin_right = 1260.0
-margin_bottom = 51.0
+margin_bottom = 48.0
 custom_fonts/font = ExtResource( 1 )
 text = "Score: %d"
 align = 2
